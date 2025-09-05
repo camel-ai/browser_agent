@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "hybrid-browser": {
+      "command": "/opt/homebrew/Caskroom/miniforge/base/envs/camel_env/bin/python",
+      "args": [
+        "-m",
+        "hybrid_browser_mcp.server"
+      ]
+    }
+  }
+}

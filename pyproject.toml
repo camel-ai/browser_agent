@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hybrid-browser-mcp"
+version = "0.1.0"
+description = "A server that exports Camel HybridBrowserToolkit as MCP-compatible tools"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "camel-ai>=0.2.58",
+    "mcp[cli]>=1.8.1",
+    "playwright>=1.50.0",
+    "websockets>=12.0",
+    "aiofiles>=0.8.0",
+    "pillow>=10.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/hybrid-browser-mcp"
+"Bug Tracker" = "https://github.com/yourusername/hybrid-browser-mcp/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "build>=0.10.0",
+    "twine>=4.0.2",
+]
+
+[project.scripts]
+hybrid-browser-mcp = "hybrid_browser_mcp.server:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::PendingDeprecationWarning",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.coverage.run]
+source = ["."]
+omit = ["tests/*", "setup.py"]
+
+[tool.setuptools]
+packages = ["hybrid_browser_mcp"]
