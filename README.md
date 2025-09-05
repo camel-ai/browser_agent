@@ -77,10 +77,6 @@ After restarting Claude Desktop:
 
 **Browser Tools in Action:**
 
-<img width="601" height="533" alt="Browser tools in action" src="https://github.com/user-attachments/assets/009ad427-2f62-4e20-ad92-4884bc106fac" />
-
-*Please click allow button to continue.*
-
 <img width="988" height="792" alt="截屏2025-09-05 22 37 58" src="https://github.com/user-attachments/assets/fd6469d1-ea83-430b-a82f-5f1aa418fee1" />
 
 *Using browser automation tools in Claude Desktop to interact with web pages*
