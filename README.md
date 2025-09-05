@@ -228,12 +228,6 @@ The server works by:
 3. Managing a singleton browser instance per session
 4. Handling WebSocket communication for real-time browser control
 
-## Requirements
-
-- Python 3.10+
-- Playwright (automatically installed)
-- CAMEL AI framework
-
 ## Development
 
 To set up a development environment:
