@@ -90,7 +90,7 @@ To use this MCP server with Claude Desktop, you need to add it to your Claude De
 
 3. **Save the file** and **completely restart Claude Desktop** (quit and reopen)
 
-   ![img.png](img.png)
+   <img width="990" height="791" alt="截屏2025-09-05 17 32 11" src="https://github.com/user-attachments/assets/aea1b8f5-59c5-4978-92ee-50f39cba653d" />
    *Example of claude_desktop_config.json with hybrid-browser-mcp configured*
 
 4. **Verify the connection**:
@@ -102,7 +102,9 @@ To use this MCP server with Claude Desktop, you need to add it to your Claude De
      - `browser_click` - Clicks on elements
      - etc.
 
-   ![img_1.png](img_1.png)
+   Then you can ask claude to use browser:
+   <img width="601" height="533" alt="截屏2025-09-05 17 30 26" src="https://github.com/user-attachments/assets/009ad427-2f62-4e20-ad92-4884bc106fac" />
+   
    *Claude Desktop showing available browser automation tools*
 
 #### Alternative: Python Path Configuration
