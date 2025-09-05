@@ -69,6 +69,3 @@ coverage.xml
 
 # Jupyter Notebook
 .ipynb_checkpoints
-
-# Package files
-uv.lock
