@@ -29,94 +29,25 @@ Or using pip:
 pip install hybrid-browser-mcp
 ```
 
-## Config with MCP clients
+## Claude Desktop Configuration
 
-### Claude Desktop Configuration
+To use this MCP server with Claude Desktop, add it to your configuration file.
 
-To use this MCP server with Claude Desktop, you need to add it to your Claude Desktop configuration file.
-
-#### Configuration File Location
+### Configuration File Location
 
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 - **Linux**: `~/.config/Claude/claude_desktop_config.json`
 
-#### Configuration Steps
+### Configuration
 
-1. **Open the configuration file** in your text editor:
-   ```bash
-   # macOS
-   nano ~/Library/Application\ Support/Claude/claude_desktop_config.json
-   
-   # Windows (in PowerShell)
-   notepad "$env:APPDATA\Claude\claude_desktop_config.json"
-   
-   # Linux
-   nano ~/.config/Claude/claude_desktop_config.json
-   ```
-
-2. **Add the hybrid-browser configuration**:
-
-   If the file is empty or doesn't exist, create it with:
-   ```json
-   {
-     "mcpServers": {
-       "hybrid-browser": {
-         "command": "uvx",
-         "args": [
-           "hybrid-browser-mcp"
-         ]
-       }
-     }
-   }
-   ```
-
-   If the file already exists with other servers, add the hybrid-browser configuration:
-   ```json
-   {
-     "mcpServers": {
-       "existing-server": {
-         // ... existing configuration
-       },
-       "hybrid-browser": {
-         "command": "uvx",
-         "args": [
-           "hybrid-browser-mcp"
-         ]
-       }
-     }
-   }
-   ```
-
-3. **Save the file** and **completely restart Claude Desktop** (quit and reopen)
-
-   <img width="990" height="791" alt="截屏2025-09-05 17 32 11" src="https://github.com/user-attachments/assets/aea1b8f5-59c5-4978-92ee-50f39cba653d" />
-   *Example of claude_desktop_config.json with hybrid-browser-mcp configured*
-
-4. **Verify the connection**:
-   - Click the 🔌 (plug icon) in Claude's conversation interface
-   - You should see "hybrid-browser" listed among available tools
-   - The tools will appear with descriptions like:
-     - `browser_open` - Opens a new browser session
-     - `browser_visit_page` - Navigates to a URL
-     - `browser_click` - Clicks on elements
-     - etc.
-
-   Then you can ask claude to use browser:
-   
-   <img width="601" height="533" alt="截屏2025-09-05 17 30 26" src="https://github.com/user-attachments/assets/009ad427-2f62-4e20-ad92-4884bc106fac" />
-   
-   *Claude Desktop showing available browser automation tools*
-
-#### Alternative: Python Path Configuration
-
-If you prefer using your specific Python environment:
+Add the following to your `claude_desktop_config.json`:
 
 ```json
 {
   "mcpServers": {
     "hybrid-browser": {
-      "command": "/path/to/your/python",
+      "command": "python",
       "args": [
         "-m",
         "hybrid_browser_mcp.server"
@@ -126,27 +57,29 @@ If you prefer using your specific Python environment:
 }
 ```
 
-Replace `/path/to/your/python` with your actual Python interpreter path. You can find it with:
-```bash
-which python
-```
+Make sure to:
+1. Use the correct path to your Python interpreter (you can find it with `which python`)
+2. Ensure the package is installed in that Python environment
+3. **Restart Claude Desktop completely** after updating the configuration
 
-#### Alternative: Local Development Configuration
+### Verify Connection
 
-If you're developing this package locally:
+After restarting Claude Desktop:
+1. Click the 🔌 (plug icon) in the conversation interface
+2. You should see "hybrid-browser" listed among available tools
+3. The browser automation tools will be available (browser_open, browser_click, etc.)
 
-```json
-{
-  "mcpServers": {
-    "hybrid-browser": {
-      "command": "python",
-      "args": [
-        "/absolute/path/to/hybrid_browser_mcp/server.py"
-      ]
-    }
-  }
-}
-```
+**Configuration Success Example:**
+
+<img width="990" height="791" alt="Configuration example" src="https://github.com/user-attachments/assets/aea1b8f5-59c5-4978-92ee-50f39cba653d" />
+
+*claude_desktop_config.json with hybrid-browser MCP server configured*
+
+**Browser Tools in Action:**
+
+<img width="601" height="533" alt="Browser tools in action" src="https://github.com/user-attachments/assets/009ad427-2f62-4e20-ad92-4884bc106fac" />
+
+*Using browser automation tools in Claude Desktop to interact with web pages*
 
 ### Browser Configuration
 
