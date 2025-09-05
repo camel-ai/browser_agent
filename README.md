@@ -103,6 +103,7 @@ To use this MCP server with Claude Desktop, you need to add it to your Claude De
      - etc.
 
    Then you can ask claude to use browser:
+   
    <img width="601" height="533" alt="截屏2025-09-05 17 30 26" src="https://github.com/user-attachments/assets/009ad427-2f62-4e20-ad92-4884bc106fac" />
    
    *Claude Desktop showing available browser automation tools*
